@@ -7,6 +7,8 @@
 @stop
 
 @section('content')
+@include('servicos._mensagem')
+
 <form action="{{ route('servicos.store') }}" method="post">
     @include('servicos._form')
 </form>
