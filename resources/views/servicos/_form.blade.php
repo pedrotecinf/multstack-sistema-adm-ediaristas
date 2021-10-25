@@ -6,8 +6,8 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="nome">Nome</label>
-                        <input value="{{ old('nome', $servico->nome ?? '' )}} " type="input" requered
+                        <label for="nome">Nome do Servico</label>
+                        <input value="{{ old('nome', $servico->nome ?? '' )}} " type="input" 
                             class="form-control" name="nome" id="nome" required placeholder="Nome do serviço">
                     </div>
                 </div>
@@ -17,13 +17,13 @@
                         <select name="icone" id="icone" Class="form-control">
                             <option value="">Selecione o ícone</option>
                             <option value="twf-cleaning-1"
-                                {{ old('icone', isset($servico) && $servico->icone) === 'twf-cleaning-1' ? 'selected' : ' '}}>
+                                {{ old('icone', $servico->icone ?? '') === 'twf-cleaning-1' ? 'selected' : ''}}>
                                 ícone 1</option>
                             <option value="twf-cleaning-2"
-                                {{ old('icone', isset($servico) && $servico->icone) === 'twf-cleaning-2' ? 'selected' : ' '}}>
+                                {{ old('icone', $servico->icone ?? '') === 'twf-cleaning-2' ? 'selected' : ''}}>
                                 ícone 2</option>
                             <option value="twf-cleaning-3"
-                                {{ old('icone', isset($servico) && $servico->icone) === 'twf-cleaning-3' ? 'selected' : ' '}}>
+                                {{ old('icone', $servico->icone ?? '') === 'twf-cleaning-3' ? 'selected' : ''}}>
                                 ícone 3</option>
                         </select>
                     </div>
@@ -31,7 +31,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="posicao">Posição na plataforma</label>
-                        <input value="{{ old('posicao', $servico->posicao ?? '') }}" type="input" requered
+                        <input value="{{ old('posicao', $servico->posicao ?? '' )}}" type="input" requered
                             class="form-control" name="posicao" data-mask="00" id="posicao"
                             placeholder="Posição do serviço na plataforma">
                     </div>
@@ -179,7 +179,7 @@
                     <div class="form-group">
                         <label for="horas_outros">Quantidade de horas por outros tipos de cômodos</label>
                         <input value="{{ old('horas_outros',$servico->horas_outros ?? '')  }}" type="input" requered
-                            class="form-control" name="horas_outros" data-mask="0" id="horas_outros"
+                            class="form-control" name="horas_outros"  id="horas_outros"
                             placeholder="Quantidade horas por outros">
                     </div>
                 </div>
