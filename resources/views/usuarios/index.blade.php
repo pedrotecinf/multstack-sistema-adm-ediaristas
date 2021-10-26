@@ -31,8 +31,13 @@
                 <td>{{$usuario->name}}</td>
                 <td>
                     <a href="{{route('usuarios.edit', $usuario)}}" class="btn btn-primary">Atualizar</a>
-                    <a href="{{route('usuarios.destroy', $usuario)}}" class="btn btn-danger">Excluir</a>
-                </td>
+                    <form action="{{route('usuarios.destroy', $usuario)}}" method="POST" style="display: inline">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" class="btn btn-danger" OnClick="return confirm('Tem certeza que deseja apagar?')">Apagar</button>
+
+                    </form>
+                    
                 
             </tr>
             @empty

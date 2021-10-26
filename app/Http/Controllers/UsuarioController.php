@@ -101,6 +101,11 @@ class UsuarioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $usuario = User::findOrFail($id);
+
+        $usuario->delete();
+
+        return redirect()->route('usuarios.index')
+                         ->with('mensagem', 'Usuario apagado com sucesso');
     }
 }
