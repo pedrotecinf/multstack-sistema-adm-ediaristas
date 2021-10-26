@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ServicoController;
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+Route::resource('usuarios', UsuarioController::class);
 
 // Rotas para Trabalhar com serviços
 Route::get('/servicos', [ServicoController::class, 'index'])->name('servicos.index');
