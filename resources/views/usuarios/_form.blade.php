@@ -8,7 +8,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="name">Nome de usuarios</label>
-                        <input value="{{ old('name ',$usuario->name ?? '' )  }}" type="input" required
+                        <input value="{{ old('name', $usuario->name ?? '' )  }}" type="input" required
                             class="form-control" name="name" 
                             id="name" placeholder="Digite o nome do Usuario">
                     </div>
@@ -16,7 +16,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="email">email</label>
-                        <input value="{{ old('email', $usuario->email?? '')}}" type="email" required
+                        <input value="{{ old('email', $usuario->email ?? '')}}" type="email" required
                             class="form-control" name="email" 
                             placeholder="Digite o email do Usuario">
                     </div>
